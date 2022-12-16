@@ -12,10 +12,10 @@ import { getFirebaseAdmin } from "./util";
 @Global()
 @Module({})
 export class FirebaseModule {
-  public static forRoot(options: FirebaseModuleOptions): DynamicModule {
+  public static forRoot(): DynamicModule {
     const provider: Provider<FirebaseAdmin> = {
       provide: FirebaseConstants.FIREBASE_TOKEN,
-      useValue: getFirebaseAdmin(options),
+      useValue: getFirebaseAdmin(),
     };
 
     return {
@@ -31,7 +31,7 @@ export class FirebaseModule {
     const firebaseProvider: Provider = {
       inject: [FirebaseConstants.FIREBASE_MODULE],
       provide: FirebaseConstants.FIREBASE_TOKEN,
-      useFactory: (options: FirebaseModuleOptions) => getFirebaseAdmin(options),
+      useFactory: () => getFirebaseAdmin(),
     };
 
     const asyncProviders = this.createAsyncProviders(options);
