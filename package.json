@@ -1,6 +1,6 @@
 {
   "name": "@fanfix/nestjs-firebase",
-  "version": "9.0.1",
+  "version": "9.0.2",
   "description": "@nestjs with firebase",
   "license": "MIT",
   "homepage": "https://github.com/fanfix/nestjs-firebase",
